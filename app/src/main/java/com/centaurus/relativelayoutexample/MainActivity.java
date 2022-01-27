@@ -10,11 +10,9 @@ import com.centaurus.relativelayoutexample.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ActivityMainBinding binding;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
         super.onCreate(savedInstanceState);
         setContentView(binding.getRoot());
 
@@ -23,11 +21,5 @@ public class MainActivity extends AppCompatActivity {
             webIntent.setData(Uri.parse("https://en.wikipedia.org/wiki/Flora"));
             startActivity(webIntent);
         });
-
-        /**
-         * Intent(Intent.ACTION_VIEW)
-         * .apply { data = Uri.parse("https://en.wikipedia.org/wiki/Flora)" }
-         * .also { startActivity(it)}
-         */
     }
 }
